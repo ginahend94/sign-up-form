@@ -1,7 +1,8 @@
 :root {
     --heading-font: 'Playfair Display', 'Times New Roman', Times, serif;
     --body-font: 'Montserrat', Arial, Helvetica, sans-serif;
-    --main-color: #202b33;
+    --main-color: #1a252c;
+    font-size: 16px;
 }
 
 html {
@@ -26,6 +27,7 @@ body {
 .hero {
     background-image: url('img/ardalan-hamedani-QAskBOimPwM-unsplash.jpg');
     background-size: cover;
+    background-color: var(--main-color);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -37,9 +39,23 @@ body {
     border: solid 1px red;
 }
 .logo {
-    border: solid 1px red;
+    width: 50%;
+}
+h1, h2, h3 {
+    font-family: var(--heading-font);
 }
 h1 {
     color:#fff;
-    font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+    position: relative;
+    font-size: 3rem;
+    font-style: italic;
+    white-space:nowrap;
+    margin: 1.5rem;
+} 
+.trademark {
+    font-size: 1rem;
+    display: inline-block;
+    position: absolute;
+    top:.5ch;
+    right:-1ch;
 }
