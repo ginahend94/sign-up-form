@@ -11,3 +11,9 @@ inputs.forEach(a => a.addEventListener('change', e => {
     }
     console.log(e.target.classList);
 }))
+inputs.forEach(a => a.addEventListener('input', e => {
+    if (e.target.validity.valid) {
+        e.target.classList.add('valid');
+        e.target.classList.remove('invalid')
+    }
+}))

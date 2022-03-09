@@ -135,6 +135,9 @@ button {
     border:solid 1px rgb(var(--secondary-color-rgb));
 }
 
-input:invalid {
+input.invalid {
     border: solid 1px red;
+}
+input.valid {
+    border: solid 1px var(--secondary-color);
 }
