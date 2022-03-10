@@ -202,3 +202,9 @@ i.error-icon, i.success-icon {
 .success-icon {
     color: rgb(var(--success-color-rgb));
 }
+
+.no-subs {
+    padding:20px;
+    background-color: rgba(var(--secondary-color-rgb),.5);
+    font-style: italic;
+}
