@@ -1,0 +1,1 @@
+document.querySelector('.username').textContent = `, ${localStorage.getItem('firstName')}`;
