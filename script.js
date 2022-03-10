@@ -6,10 +6,7 @@ form.addEventListener('submit', e => {
     submitForm();
 });
 
-
-
-
-const isValidEmail = emailValue => {
+const isValidEmail = email => {
     const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return emailRegex.test(email.value.toString().toLowerCase());
 }
@@ -31,8 +28,12 @@ const validate = () => {
         element.classList.remove('valid');
         element.classList.add('invalid');
         errorMessage(element).textContent = message;
+// Show icon
         errorIcon(element).style.display = 'block';
         successIcon(element).style.display = 'none';
+// Wiggle
+        element.classList.add('wiggle');
+        setTimeout(() => element.classList.remove('wiggle'), 600);
     }
 
     const valid = (element) => {
@@ -46,7 +47,10 @@ const validate = () => {
 // If value is empty, message is "required"
     if (firstName.value.trim() == '') {
         invalid(firstName, 'First name is required.');
-    } else valid(firstName);
+    } else {
+        valid(firstName);
+        localStorage.setItem('firstName', firstName.value)
+    }
 
     if (lastName.value.trim() == '') {
         invalid(lastName, 'Last name is required.');
@@ -70,7 +74,6 @@ const validate = () => {
     if (password.value == '') {
         invalid(password, 'Password is required.');
     } else if (password.value.length < 8) {
-        console.log(password.value);
         invalid(password, 'Password must be at least 8 characters.');
     } else valid(password);
 
@@ -83,14 +86,13 @@ const validate = () => {
     } else valid(confirmPassword);
 }
 
+
 const submitForm = () => {
     validate();
     if (Array.from(inputs).every(a => a.classList.contains('valid'))) {
+// If everything is good, redirect to dummy welcome screen w/name and stuff
         console.log(window.location)
     }
+    inputs.forEach(a => a.addEventListener('change', validate));
 }
-// Change color
-// Wiggle
-// Show icon
-// If everything is good, redirect to dummy welcome screen w/name and stuff
 // Link at bottom goes to dummy login screen
