@@ -5,6 +5,8 @@
     --main-color-rgb:50, 83, 104;
     --secondary-color: rgb(116, 137, 150);
     --secondary-color-rgb: 116, 137, 150;
+    --error-color-rgb: 217, 85, 80;
+    --success-color-rgb: 76, 149, 115;
     font-size: 16px;
 }
 
@@ -41,7 +43,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
-.top {
+.top, .bottom {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,12 +79,12 @@ main {
     flex: 1;
 }
 main > * {
-    border: solid 1px;
     padding: 20px;
 }
 form {
     display: flex;
     flex-direction: column;
+    box-shadow: 1px 2px 5px 2px rgba(var(--secondary-color-rgb), .3);
 }
 label {
     display: flex;
@@ -90,6 +92,7 @@ label {
     width: calc(50% - 20px);
     letter-spacing: 1px;
     color:var(--secondary-color);
+    position: relative;
 }
 input {
     padding:5px;
@@ -101,7 +104,7 @@ input {
     outline:none;
 }
 input:focus {
-    box-shadow: 0 0 2px 3px rgba(var(--secondary-color-rgb), .1);
+    box-shadow: 1px 1px 3px 1px rgba(var(--secondary-color-rgb), .3);
 }
 .form-body {
     display: flex;
@@ -125,6 +128,10 @@ a:hover {
     text-decoration: underline;
 }
 
+.sign-up-button {
+    margin-top: 30px;
+}
+
 button {
     padding:10px;
     font-size: 1rem;
@@ -133,11 +140,40 @@ button {
     color:#fff;
     border-radius: 5px;
     border:solid 1px rgb(var(--secondary-color-rgb));
+    transition: .2s;
 }
 
-input.invalid {
-    border: solid 1px red;
+button:hover {
+    background-color: rgba(var(--main-color-rgb), .9);
+    cursor: pointer;
 }
-input.valid {
-    border: solid 1px var(--secondary-color);
+
+.sign-up-button p {
+    font-size: .8rem;
+}
+
+.invalid {
+    border: solid 1px rgb(var(--error-color-rgb));
+}
+.valid {
+    border: solid 1px rgb(var(--success-color-rgb));
+}
+
+.error {
+    margin: 0;
+    font-size: .7rem;
+    height: 1rem;
+    color:rgb(var(--error-color-rgb));
+}
+.error-icon, .success-icon {
+    position: absolute;
+    right: 7px;
+    top:27px;
+    display: none;
+}
+.error-icon {
+    color:rgb(var(--error-color-rgb));
+}
+.success-icon {
+    color: rgb(var(--success-color-rgb));
 }

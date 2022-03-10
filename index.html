@@ -20,7 +20,7 @@
                     <img class="logo" src="img/logo-bg.png">
                 </div>
                 <div class="bottom">
-                    <p>Photo by <a href="https://unsplash.com/@ardalanhamedani?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ardalan Hamedani</a> on <a href="https://unsplash.com/collections/1118919/coffee-culture-%E2%98%95%EF%B8%8F?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
+                    <p>Photo by <a href="https://unsplash.com/@ardalanhamedani?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="blank_" rel="noreferrer">Ardalan Hamedani</a> on <a href="https://unsplash.com/collections/1118919/coffee-culture-%E2%98%95%EF%B8%8F?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="blank_" rel="noreferrer">Unsplash</a></p>
                 </div>
             </div>
             <main>
@@ -37,31 +37,49 @@
                     </h3>
                 </div>
                 <form action="#">
-                    <p class="required">All fields are required.<i class="fas fa-exclamation-triangle"></i></p>
+                    <p class="required">All fields are required.</p>
                     <div class="form-body">
                         <label for="first-name">
                             First name
-                            <input type="text" name="first-name" id="first-name" required>
+                            <input type="text" name="first-name" id="first-name">
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <p class="error"></p>
                         </label>
                         <label for="last-name">
                             Last name
-                            <input type="text" name="last-name" id="last-name" required>
+                            <input type="text" name="last-name" id="last-name">
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <p class="error"></p>
                         </label>
                         <label for="email">
                             Email
-                            <input type="email" name="email" id="email" required>
+                            <input type="text" name="email" id="email">
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <p class="error"></p>
                         </label>
                         <label for="phone">
                             Phone number
-                            <input type="tel" name="phone" id="phone" required>
+                            <input type="tel" name="phone" id="phone">
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <p class="error"></p>
                         </label>
                         <label for="password">
                             Password
-                            <input type="password" name="password" id="password" required>
+                            <input type="password" name="password" id="password">
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <p class="error"></p>
                         </label>
                         <label for="confirm-password">
                             Confirm password
-                            <input type="password" name="confirm-password" id="confirm-password" required>
+                            <input type="password" name="confirm-password" id="confirm-password">
+                            <i class="fas fa-exclamation-circle error-icon"></i>
+                            <i class="fas fa-check-circle success-icon"></i>
+                            <p class="error"></p>
                         </label>
                     </div>
                     <div class="sign-up-button">
