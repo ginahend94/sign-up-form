@@ -97,7 +97,6 @@ const validateConfirm = () => {
 
 // Take in value
 const validate = element => {
-
     switch (element.id) {
         case 'first-name':
             validateFirstName();
@@ -122,13 +121,11 @@ const validate = element => {
     }
 }
 
-
 const submitForm = () => {
-    validate();
+    inputs.forEach(input => validate(input));
     if (Array.from(inputs).every(a => a.classList.contains('valid'))) {
 // If everything is good, redirect to dummy welcome screen w/name and stuff
         window.location = 'home.html'
     }
-    inputs.forEach(a => a.addEventListener('change', validate));
+    inputs.forEach(a => a.addEventListener('change', validate.bind(a, a)));
 }
-// Link at bottom goes to dummy login screen
